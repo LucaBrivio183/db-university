@@ -28,5 +28,5 @@
     FROM `departments` 
     JOIN `degrees`
     ON `departments`.`id` = `degrees`.`department_id`
-    GROUP BY `degrees`.`department_id`
+    GROUP BY `degrees`.`department_id`;
 ```
