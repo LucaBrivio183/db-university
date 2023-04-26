@@ -1,7 +1,10 @@
 ### Contare quanti iscritti ci sono stati ogni anno
-SELECT YEAR(`enrolment_date`),COUNT(`id`) 
-FROM `students` 
-GROUP BY YEAR(`enrolment_date`);
+
+```bash
+    SELECT YEAR(`enrolment_date`),COUNT(`id`) 
+    FROM `students` 
+    GROUP BY YEAR(`enrolment_date`);
+```
 
 ### Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 SELECT `office_address`, COUNT(`id`) 
