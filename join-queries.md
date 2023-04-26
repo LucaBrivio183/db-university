@@ -34,6 +34,8 @@
     ON `degrees`.`department_id` = `departments`.`id`
     ORDER BY `students`.`surname` ASC,`students`.`name` ASC;
 ```
+## Schema di riferimento
+![App Screenshot](db-university.png)
 ### Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 ```bash
     SELECT `degrees`.`name` AS 'percorso di laurea',`courses`.`name`AS 'corsi',`teachers`.`name`AS 'nome professore',`teachers`.`surname`AS 'cognome professore'

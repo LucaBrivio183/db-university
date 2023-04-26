@@ -1,3 +1,5 @@
+## Schema di riferimento
+![App Screenshot](db-university.png)
 ### Contare quanti iscritti ci sono stati ogni anno
 ```bash
     SELECT YEAR(`enrolment_date`),COUNT(`id`) 

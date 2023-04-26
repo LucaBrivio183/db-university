@@ -1,3 +1,5 @@
+## Schema di riferimento
+![App Screenshot](db-university.png)
 ### Selezionare tutti gli studenti nati nel 1990 (160)
 ```bash
     SELECT * 
