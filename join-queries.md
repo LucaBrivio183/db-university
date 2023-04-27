@@ -63,14 +63,13 @@
     WHERE `departments`.`id`= 5; 
 ```
 ### BONUS: Selezionare per ogni studente quanti tentativi d'esame ha sostenuto per superare ciascuno dei suoi esami
-```bash
-    SELECT `students`.`surname`,`students`.`name`, COUNT(`exams`.`id`) AS 'numero tentativi'
+```bash    
+    SELECT `students`.`id`, `students`.`name`, `students`.`surname`, MAX(`exam_student`.`vote`) AS `voto_esame`, `courses`.`name`, COUNT(`exam_student`.`vote`) AS 'numero_tentativi'
     FROM `students`
-    JOIN `exam_student`
-    ON `students`.`id` = `exam_student`.`student_id`
-    JOIN `exams`
-    ON `exam_student`.`exam_id` = `exams`.`id`
-    WHERE `exam_student`.`vote` >= 18
-    GROUP BY `students`.`id`
+    JOIN `exam_student` ON `students`.`id` = `exam_student`.`student_id`
+    JOIN `exams` ON `exam_student`.`exam_id` = `exams`.`id`
+    JOIN `courses` ON `exams`.`course_id` = `courses`.`id`
+    GROUP BY `students`.`id`, `courses`.`id`
+    HAVING `voto_esame` > 18
     ORDER BY `students`.`surname` ASC, `students`.`name` ASC;
 ```
